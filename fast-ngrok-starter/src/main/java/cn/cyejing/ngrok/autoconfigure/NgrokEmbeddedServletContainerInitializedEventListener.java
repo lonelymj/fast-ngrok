@@ -2,11 +2,11 @@ package cn.cyejing.ngrok.autoconfigure;
 
 import cn.cyejing.ngrok.core.NgrokClient;
 import cn.cyejing.ngrok.core.Tunnel;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerInitializedEvent;
+import org.springframework.boot.web.context.WebServerInitializedEvent;
 import org.springframework.context.ApplicationListener;
 
 public class NgrokEmbeddedServletContainerInitializedEventListener implements
-        ApplicationListener<EmbeddedServletContainerInitializedEvent> {
+        ApplicationListener<WebServerInitializedEvent> {
     private final NgrokProperties ngrokProperties;
 
     public NgrokEmbeddedServletContainerInitializedEventListener(NgrokProperties ngrokProperties) {
@@ -14,7 +14,7 @@ public class NgrokEmbeddedServletContainerInitializedEventListener implements
     }
 
     @Override
-    public void onApplicationEvent(EmbeddedServletContainerInitializedEvent event) {
+    public void onApplicationEvent(WebServerInitializedEvent event) {
         int port = event.getSource().getPort();
         String serverAddress = ngrokProperties.getServerAddress();
         int serverPort = ngrokProperties.getServerPort();
