@@ -2,15 +2,30 @@
 
 Java版本Ngrok客户端,集成spring-boot随应用启动快速映射应用端口
 
+由于原版本支持Sprintboot的版本为1.5.6.RELEASE,而本人需要目标版本为2.1.1.RELEASE,所以fork了一份进行修改，分支为2.1.1
+
+感谢大神分享！
+
 ### 使用方法
 
 1. 添加POM依赖: 
 
+
+##### springboot:1.5.6.RELEASE
 ```
 <dependency>
     <groupId>cn.cyejing</groupId>
     <artifactId>fast-ngrok-starter</artifactId>
     <version>1.0.1</version>
+</dependency>
+```
+
+##### springboot:2.1.1.RELEASE
+```
+<dependency>
+    <groupId>cn.cyejing</groupId>
+    <artifactId>fast-ngrok-starter</artifactId>
+    <version>2.1.1</version>
 </dependency>
 ```
 
